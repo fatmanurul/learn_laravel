@@ -7,13 +7,16 @@
     <div class="right navbar-right " id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-        <a class="nav-link {{ ($title === "Home") ? 'active' : '' }}" href="/">Home</a>
+        <a class="nav-link {{ ($active === "home") ? 'active' : '' }}" href="/">Home</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link {{ ($title === "Posts") ? 'active' : '' }}" href="/posts">Blog</a>
+        <a class="nav-link {{ ($active === "about") ? 'active' : '' }}" href="/about">About</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link {{ ($title === "best-sellers") ? 'active' : '' }}" href="/best-sellers">best-sellers</a>
+        <a class="nav-link {{ ($active === "posts") ? 'active' : '' }}" href="/posts">Blog</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link {{ ($active === "Categories") ? 'active' : '' }}" href="/categories">Categories</a>
         </li>
       </ul>
     </div>

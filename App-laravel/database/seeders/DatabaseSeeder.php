@@ -38,9 +38,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Category::create([
-          'name' => 'Biskuit butir cokelat',
-          'slug' => 'biskuit-butir-cokelat',
+          'name' => 'Cookies',
+          'slug' => 'cookies',
         ]);
+
+        Category::create([
+            'name' => 'Cup Cake',
+            'slug' => 'cup-cake',
+          ]);
 
        Post::factory(20)->create();
 

@@ -20,13 +20,15 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view ('home',[
-        "title" => "Home"
+        "title" => "Home",
+        "active" => "home"
     ]);
 });
 
-Route::get('/best-sellers', function () {
-    return view ('best-sellers',[
-        "title" => "best-sellers",
+Route::get('/about', function () {
+    return view ('about',[
+        "title" => "about",
+        "active" => "about",
         "name" => "fatma nh",
         "email" => "fatmanurulhidayah347@gmail.com",
         "img" => "9.jpg"
@@ -39,21 +41,24 @@ Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 Route::get('/categories', function(){
     return view('categories',[
         'title' => 'Post Categories',
+        'active' => 'categories',
         'categories' => category::all()
     ]);
       });
 
-Route::get('categories/{category:slug}', function(Category $category){
-    return view('category',[
-        'title' => $category->nama,
-        'posts' => $category->posts,
-        'category' => $category->nama
-    ]);
-});
+// Route::get('categories/{category:slug}', function(Category $category){
+//     return view('posts',[
+//         'title' => "Post by Category :$category->name",
+//         'active' => 'categories',
+//         'posts' => $category->posts->load('category','author')//lazy eager loding
+      
+//     ]);
+// });
 
-Route::get('/authors/{author:username}', function(User $author){
-    return view('posts',[
-        'title' => 'User Posts',
-        'posts' => $author->posts,
-    ]);
-});
+// Route::get('/authors/{author:username}', function(User $author){
+//     return view('posts',[
+//         'title' => "Post By Author : $author->name",
+//         "active" => "posts",
+//         'posts' => $author->posts->load('category','author'),
+//     ]);
+// });
